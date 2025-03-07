@@ -1,3 +1,18 @@
+<!-- links -->
+[your-project-path]: goer3/stellar
+[go-shield]: https://img.shields.io/badge/Go-1.23-c14438?style=social&logo=Go
+[go-url]: https://go.dev/dl/
+[react-shield]: https://img.shields.io/badge/React-18+-blue.svg?style=social&logo=React
+[react-url]: https://react.dev/
+[contributors-shield]: https://img.shields.io/github/contributors/goer3/stellar.svg?style=social&logo=github
+[contributors-url]: https://github.com/goer3/stellar/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/goer3/stellar.svg?style=social&logo=github
+[forks-url]: https://github.com/goer3/stellar/network/members
+[stars-shield]: https://img.shields.io/github/stars/goer3/stellar.svg?style=social&logo=refinedgithub
+[stars-url]: https://github.com/goer3/stellar/stargazers
+[issues-shield]: https://img.shields.io/github/issues/goer3/stellar.svg?style=social&logo=github
+[issues-url]: https://img.shields.io/github/issues/goer3/stellar.svg
+
 <br/>
 <div align="center">
   <img src="images/logo.png" alt="Logo" height="60">
@@ -10,11 +25,12 @@
     <a href="https://github.com/shaojintian/Best_README_template/issues">提出新特性</a>
   </p>
 
+[![Go][go-shield]][go-url]
+[![React][react-shield]][react-url]
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 
 </div>
 
@@ -133,22 +149,5 @@ xxx@xxxx
 
 - [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 - [Img Shields](https://shields.io)
-- [Choose an Open Source License](https://choosealicense.com)
-- [GitHub Pages](https://pages.github.com)
-- [Animate.css](https://daneden.github.io/animate.css)
-- [xxxxxxxxxxxxxx](https://connoratherton.com/loaders)
 
-<!-- links -->
-[your-project-path]:shaojintian/Best_README_template
-[contributors-shield]: https://img.shields.io/github/contributors/shaojintian/Best_README_template.svg?style=flat-square
-[contributors-url]: https://github.com/shaojintian/Best_README_template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/shaojintian/Best_README_template.svg?style=flat-square
-[forks-url]: https://github.com/shaojintian/Best_README_template/network/members
-[stars-shield]: https://img.shields.io/github/stars/shaojintian/Best_README_template.svg?style=flat-square
-[stars-url]: https://github.com/shaojintian/Best_README_template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/shaojintian/Best_README_template.svg?style=flat-square
-[issues-url]: https://img.shields.io/github/issues/shaojintian/Best_README_template.svg
-[license-shield]: https://img.shields.io/github/license/shaojintian/Best_README_template.svg?style=flat-square
-[license-url]: https://github.com/shaojintian/Best_README_template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/shaojintian
+
