@@ -1,5 +1,4 @@
 <br/>
-<br/>
 <div align="center">
   <img src="images/logo.png" alt="Logo" height="60">
   <br/>
