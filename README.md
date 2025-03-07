@@ -43,7 +43,7 @@
 - [项目目录结构说明](#项目目录结构说明)
 - [系统架构设计](#系统架构设计)
 - [部署](#部署)
-- [使用到的框架](#使用到的框架)
+- [使用到的第三方库](#使用到的第三方库)
 - [贡献者](#贡献者)
   - [如何参与开源项目](#如何参与开源项目)
 - [联系我](#联系我)
@@ -65,9 +65,10 @@
 
 暂无
 
-### 使用到的框架
+### 使用到的第三方库
 
 * Go
+  - [Cobra](https://github.com/spf13/cobra)：Cobra is a library for creating powerful modern CLI applications.
   - [Gin](https://gin-gonic.com/)
   - [Gorm](https://gorm.io/)
 * React
