@@ -18,11 +18,11 @@
   <img src="images/logo.png" alt="Logo" height="60">
   <br/><br/>
   <p align="center">
-    <a href="https://github.com/shaojintian/Best_README_template">查看DEMO</a>
+    <a href="https://github.com/goer3/stellar">查看DEMO</a>
     ·
-    <a href="https://github.com/shaojintian/Best_README_template/issues">报告BUG</a>
+    <a href="https://github.com/goer3/stellar/issues">报告BUG</a>
     ·
-    <a href="https://github.com/shaojintian/Best_README_template/issues">提出新特性</a>
+    <a href="https://github.com/goer3/stellar/issues">提出新特性</a>
   </p>
 
 [![Go][go-shield]][go-url]
