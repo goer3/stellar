@@ -9,4 +9,7 @@ var (
 	ServerListenHost = "0.0.0.0"      // 服务监听地址
 	ServerListenPort = 12345          // 服务监听端口
 	ServerConfigFile = "stellar.yaml" // 服务配置文件
+	ServerLeaderRole = 1              // 是否参与领导者选举, 0: 不参与, 1: 参与
+	ServerWorkerRole = 1              // 是否开启工作节点角色, 0: 不开启, 1: 开启
+	ServerWebRole    = 1              // 是否开启后端服务角色, 0: 不开启, 1: 开启
 )
