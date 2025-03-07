@@ -59,7 +59,7 @@
 
 ### 系统架构设计 
 
-请阅读[ARCHITECTURE.md](https://github.com/goer3/stellar/docs/ARCHITECTURE.md) 查阅为该项目的架构。
+请阅读 [ARCHITECTURE.md](https://github.com/goer3/stellar/docs/ARCHITECTURE.md) 查阅为该项目的架构。
 
 ### 部署
 
@@ -76,7 +76,7 @@
 
 ### 贡献者
 
-请阅读**CONTRIBUTING.md** 查阅为该项目做出贡献的开发者。
+请阅读 **CONTRIBUTING.md** 查阅为该项目做出贡献的开发者。
 
 #### 如何参与开源项目
 
