@@ -1,7 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+
+// 全局样式
+import '@/assets/css/stellar-antd.less'
+import '@/assets/css/stellar.less'
+
+// 组件
+import App from '@/App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

@@ -2,7 +2,7 @@
 [your-project-path]: goer3/stellar
 [go-shield]: https://img.shields.io/badge/Go-1.23-c14438?style=social&logo=Go
 [go-url]: https://go.dev/dl/
-[react-shield]: https://img.shields.io/badge/React-18+-blue.svg?style=social&logo=React&logoColor=087ea4
+[react-shield]: https://img.shields.io/badge/React-19+-blue.svg?style=social&logo=React&logoColor=087ea4
 [react-url]: https://react.dev/
 [contributors-shield]: https://img.shields.io/github/contributors/goer3/stellar.svg?style=social&logo=github
 [contributors-url]: https://github.com/goer3/stellar/graphs/contributors
@@ -37,7 +37,8 @@
  
 ## 目录
 
-
+- [项目介绍](#项目介绍)
+  - [主要特性](#主要特性)
 - [上手指南](#上手指南)
   - [开发前您需要准备](#开发前您需要准备)
   - [项目初始化](#项目初始化)
@@ -57,7 +58,7 @@
 
 Stellar 是一个基于 Go 和 React 构建的新一代多数据源支持的智能运维监控告警平台。
 
-### 主要特性
+#### 主要特性
 
 - 🚀 现代化的技术栈
 - 📦 容器化部署支持
@@ -91,6 +92,9 @@ npm create vite@latest web --template react
 
 # Prettier：代码格式化
 npm install --save-dev --save-exact prettier
+
+# Less：将 Less 样式转换为 CSS 样式的工具
+npm install -D less
 ```
 
 #### 后端开发库
