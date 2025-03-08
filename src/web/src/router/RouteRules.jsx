@@ -10,22 +10,22 @@ export const RouteRules = [
   },
   {
     path: '/',
-    element: RouteLazyLoad(React.lazy(() => import('../layout/Main.jsx'))),
+    element: RouteLazyLoad(React.lazy(() => import('@/layout/Main'))),
     children: [
       {
         path: '/dashboard',
-        element: RouteLazyLoad(React.lazy(() => import('../page/dashboad/Dashboard.jsx'))),
+        element: RouteLazyLoad(React.lazy(() => import('@/page/dashboad/Dashboard'))),
       },
       {
         path: '/system',
         children: [
           {
             path: '/system/role',
-            element: RouteLazyLoad(React.lazy(() => import('../page/system/Role.jsx'))),
+            element: RouteLazyLoad(React.lazy(() => import('@/page/system/Role'))),
           },
           {
             path: '/system/user',
-            element: RouteLazyLoad(React.lazy(() => import('../page/system/User.jsx'))),
+            element: RouteLazyLoad(React.lazy(() => import('@/page/system/User'))),
           },
         ],
       },
@@ -33,19 +33,19 @@ export const RouteRules = [
   },
   {
     path: '/',
-    element: RouteLazyLoad(React.lazy(() => import('../layout/Error.jsx'))),
+    element: RouteLazyLoad(React.lazy(() => import('@/layout/Error'))),
     children: [
       {
         path: '/error/403',
-        element: RouteLazyLoad(React.lazy(() => import('../page/error/403.jsx'))),
+        element: RouteLazyLoad(React.lazy(() => import('@/page/error/403'))),
       },
       {
         path: '/error/404',
-        element: RouteLazyLoad(React.lazy(() => import('../page/error/404.jsx'))),
+        element: RouteLazyLoad(React.lazy(() => import('@/page/error/404'))),
       },
       {
         path: '/error/500',
-        element: RouteLazyLoad(React.lazy(() => import('../page/error/500.jsx'))),
+        element: RouteLazyLoad(React.lazy(() => import('@/page/error/500'))),
       },
     ],
   },
