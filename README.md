@@ -100,6 +100,9 @@ npm install antd --save
 
 # Misans
 npm install misans --save
+
+# React-router
+npm i react-router react-router-dom --save
 ```
 
 #### 后端开发库
