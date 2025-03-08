@@ -1,4 +1,5 @@
 <!-- links -->
+
 [your-project-path]: goer3/stellar
 [go-shield]: https://img.shields.io/badge/Go-1.23-c14438?style=social&logo=Go
 [go-url]: https://go.dev/dl/
@@ -34,7 +35,6 @@
 
 </div>
 
- 
 ## 目录
 
 - [项目介绍](#项目介绍)
@@ -52,7 +52,6 @@
   - [如何参与开源项目](#如何参与开源项目)
 - [联系我](#联系我)
 - [鸣谢](#鸣谢)
-
 
 ### 项目介绍
 
@@ -74,7 +73,7 @@ Stellar 是一个基于 Go 和 React 构建的新一代多数据源支持的智�
 
 ### 项目目录结构说明
 
-### 系统架构设计 
+### 系统架构设计
 
 请阅读 [ARCHITECTURE.md](https://github.com/goer3/stellar/docs/ARCHITECTURE.md) 查阅为该项目的架构。
 
@@ -95,6 +94,12 @@ npm install --save-dev --save-exact prettier
 
 # Less：将 Less 样式转换为 CSS 样式的工具
 npm install -D less
+
+# Antd
+npm install antd --save
+
+# Misans
+npm install misans --save
 ```
 
 #### 后端开发库
@@ -135,8 +140,5 @@ go get -u github.com/spf13/cobra
 
 ### 鸣谢
 
-
 - [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 - [Img Shields](https://shields.io)
-
-
