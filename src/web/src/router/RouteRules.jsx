@@ -14,7 +14,7 @@ export const RouteRules = [
     children: [
       {
         path: '/dashboard',
-        element: RouteLazyLoad(React.lazy(() => import('../page/Dashboard.jsx'))),
+        element: RouteLazyLoad(React.lazy(() => import('../page/dashboad/Dashboard.jsx'))),
       },
       {
         path: '/system',

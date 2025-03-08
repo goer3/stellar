@@ -1,6 +1,6 @@
 import { App } from 'antd';
 import { BrowserRouter } from 'react-router-dom';
-import { GenerateRoutes } from './router/RouteRules';
+import { GenerateRoutes } from '@/router/RouteRules';
 
 const Route = () => {
   return (
