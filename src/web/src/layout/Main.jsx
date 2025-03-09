@@ -33,7 +33,55 @@ const menuItems = [
       {
         key: '/system/role',
         label: '角色管理'
-      }
+      },
+      {
+        key: '/system/menu',
+        label: '菜单管理'
+      },
+      {
+        key: '/system/permission',
+        label: '权限管理'
+      },
+      {
+        key: '/system/log',
+        label: '日志管理'
+      },
+      {
+        key: '/system/config',
+        label: '系统配置'
+      },
+      {
+        key: '/system/monitor',
+        label: '系统监控'
+      },
+      {
+        key: '/system/backup',
+        label: '数据备份'
+      },
+      {
+        key: '/system/restore',
+        label: '数据恢复'
+      },
+      {
+        key: '/system/audit',
+        label: '审计日志'
+      },
+      {
+        key: '/system/notification',
+        label: '通知管理'
+      },
+      {
+        key: '/system/message',
+        label: '消息管理'
+      },
+      {
+        key: '/system/schedule',
+        label: '定时任务'
+      },
+      {
+        key: '/system/job',
+        label: '工作流'
+      },
     ]
   },
   {
@@ -70,7 +118,7 @@ const MainLayout = () => {
           onCollapse={(value) => setCollapsed(value)} // 折叠回调
           trigger={collapsed ? <RightArrowIcon /> : <LeftArrowIcon />}
         >
-          <Menu mode="inline" defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']} items={menuItems} />
+          <Menu className="stellar-menu" mode="inline" defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']} items={menuItems} />
         </Sider>
         <Layout>
           <Content>

@@ -61,12 +61,18 @@ body {
   bottom: 0;
 
   .stellar-sider {
-    overflow-y: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    user-select: none;
     box-shadow: @RightShadow;
+    background-color: @SiderBgColor;
+    letter-spacing: 0.5px;
   }
+}
+
+.stellar-menu {
+  max-height: calc(100vh - @HeaderHeight - @HeaderHeight - 20px) !important;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  user-select: none;
 }
 
 // 箭头图标

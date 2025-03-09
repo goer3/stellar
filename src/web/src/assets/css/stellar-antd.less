@@ -1,6 +1,17 @@
 @import '@/assets/css/stellar-var.less';
 
 // 复写 Ant Design 样式
+// 菜单 Sider
+.ant-layout-sider .ant-layout-sider-children {
+    padding: 10px 0;
+}
+
+// 折叠菜单时，子菜单选中，父菜单项的背景色
+.ant-layout-sider-collapsed .ant-menu-submenu-selected {
+    background-color: @MenuSelectedBg;
+}
+
+// 菜单折叠触发器
 .ant-layout-sider-has-trigger {
     padding-bottom: @HeaderHeight;
 }
@@ -10,8 +21,4 @@
     line-height: @HeaderHeight;
     font-weight: bolder;
     box-shadow: @TopShadow;
-}
-
-.ant-layout-sider .ant-layout-sider-children {
-    padding: 10px 0;
 }
