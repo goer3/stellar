@@ -1,3 +1,143 @@
 @import '@/assets/css/stellar-var.less';
 
 // 基础样式
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*全局滚动条*/
+::-webkit-scrollbar-track-piece {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  background-clip: padding-box;
+  min-height: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.stellar-header {
+  height: @HeaderHeight;
+  line-height: @HeaderHeight;
+  background-color: #ffffff;
+  box-shadow: @BottomShadow;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  .stellar-logo {
+    height: @HeaderHeight;
+    line-height: @HeaderHeight;
+    padding: calc((@HeaderHeight - @HeaderLogoHeight) / 2) 0;
+
+    img {
+      height: @HeaderLogoHeight;
+    }
+  }
+}
+
+.stellar-body {
+  position: fixed;
+  top: @HeaderHeight;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  .stellar-sider {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    user-select: none;
+    box-shadow: @RightShadow;
+  }
+}
+
+// 箭头图标
+.stellar-right-arrow {
+  left: calc(50% - 6px);
+}
+
+.stellar-left-arrow {
+  left: calc(50% - 3px);
+}
+
+.stellar-right-arrow,
+.stellar-left-arrow,
+.stellar-up-arrow,
+.stellar-down-arrow {
+  position: absolute;
+  top: 50%;
+
+
+  &::before,
+  &::after {
+    position: absolute;
+    width: 8px;
+    height: 2px;
+    background-color: currentColor; 
+    border-radius: 0;
+    transition:
+      background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+      transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), 
+      top 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+      color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    content: '';
+  }
+}
+
+.stellar-right-arrow {
+  &::before {
+    transform: rotate(45deg) translateY(-3px);
+  }
+
+  &::after {
+    transform: rotate(-45deg) translateY(3px);
+  }
+}
+
+.stellar-left-arrow {
+  &::before {
+    transform: rotate(-45deg) translateY(-3px);
+  }
+
+  &::after {
+    transform: rotate(45deg) translateY(3px);
+  }
+}
+
+.stellar-up-arrow {
+  &::before {
+    transform: rotate(-45deg) translateX(3px);
+  }
+
+  &::after {
+    transform: rotate(45deg) translateX(-3px);
+  }
+}
+
+.stellar-down-arrow {
+  &::before {
+    transform: rotate(45deg) translateX(3px);
+  }
+
+  &::after {
+    transform: rotate(-45deg) translateX(-3px);
+  }
+}
