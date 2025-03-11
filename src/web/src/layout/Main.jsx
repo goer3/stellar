@@ -1,9 +1,10 @@
 import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
-import { Layout, Menu, Avatar, Dropdown } from 'antd';
-import { DesktopOutlined, ClusterOutlined, ApiOutlined, UserOutlined } from '@ant-design/icons';
+import { Layout, Menu, Avatar, Dropdown, Badge } from 'antd';
+import { DesktopOutlined, ClusterOutlined, ApiOutlined } from '@ant-design/icons';
 import { Logo } from '@/components/Image';
 import { RightArrowIcon, LeftArrowIcon } from '@/components/Icon';
+import { GenerateGenderBadge } from '@/components/Tag';
 const { Header, Content, Sider } = Layout;
 
 // 下拉菜单
@@ -123,7 +124,9 @@ const MainLayout = () => {
         </div>
         <div className='stellar-header-menu'>
           <Dropdown menu={{ items: dropdownItems }}>
-            <Avatar size={30} src="/images/avatar/default.png" />
+            <Badge size='small' count={GenerateGenderBadge(1)} offset={[-5, 25]}>
+              <Avatar size={30} src="/images/avatar/default.png" />
+            </Badge>
           </Dropdown>
         </div>
       </Header>
