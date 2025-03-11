@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
-import { Layout, Menu } from 'antd';
-import { DesktopOutlined, ClusterOutlined, ApiOutlined } from '@ant-design/icons';
+import { Layout, Menu, Avatar, Dropdown } from 'antd';
+import { DesktopOutlined, ClusterOutlined, ApiOutlined, UserOutlined } from '@ant-design/icons';
 import { Logo } from '@/components/Image';
 import { RightArrowIcon, LeftArrowIcon } from '@/components/Icon';
 const { Header, Content, Sider } = Layout;
@@ -9,8 +9,24 @@ const { Header, Content, Sider } = Layout;
 // 下拉菜单
 const dropdownItems = [
   {
-    key: 'logout',
-    label: '退出'
+    key: '3',
+    label: (
+      <span>DK / 吴彦祖</span>
+    ),
+    disabled: true
+  },
+  {
+    key: '1',
+    label: (
+      <a target="_blank" rel="noopener noreferrer" href="">
+        个人中心
+      </a>
+    )
+  },
+  {
+    key: '4',
+    danger: true,
+    label: '注销登录'
   }
 ];
 
@@ -81,14 +97,14 @@ const menuItems = [
       {
         key: '/system/job',
         label: '工作流'
-      },
+      }
     ]
   },
   {
     key: '/information',
     icon: <ApiOutlined />,
-    label: '节点信息',
-  },
+    label: '节点信息'
+  }
 ];
 
 const MainLayout = () => {
@@ -105,7 +121,11 @@ const MainLayout = () => {
         <div className="stellar-logo">
           <img src={Logo} alt="logo" />
         </div>
-        <Menu theme="light" mode="horizontal" defaultSelectedKeys={['2']} items={dropdownItems} />
+        <div className='stellar-header-menu'>
+          <Dropdown menu={{ items: dropdownItems }}>
+            <Avatar size={30} src="/images/avatar/default.png" />
+          </Dropdown>
+        </div>
       </Header>
       <Layout className="stellar-body">
         <Sider
