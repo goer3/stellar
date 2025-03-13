@@ -32,6 +32,14 @@ export const RouteRules = [
     ],
   },
   {
+    path: '/login',
+    element: RouteLazyLoad(React.lazy(() => import('@/page/login/Login'))),
+  },
+  {
+    path: '/account-login',
+    element: RouteLazyLoad(React.lazy(() => import('@/page/login/AccountLogin'))),
+  },
+  {
     path: '/',
     element: RouteLazyLoad(React.lazy(() => import('@/layout/Error'))),
     children: [
