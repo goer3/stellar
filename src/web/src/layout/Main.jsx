@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
 import { Layout, Menu, Avatar, Dropdown, Badge } from 'antd';
-import { DesktopOutlined, ClusterOutlined, ApiOutlined } from '@ant-design/icons';
+import { DesktopOutlined, ClusterOutlined, ApiOutlined, DatabaseOutlined, AlertOutlined, MailOutlined, AimOutlined } from '@ant-design/icons';
 import { Logo } from '@/components/Image';
 import { RightArrowIcon, LeftArrowIcon } from '@/components/Icon';
 import { GenerateGenderBadge } from '@/components/Tag';
@@ -39,6 +39,66 @@ const menuItems = [
     label: '工作空间'
   },
   {
+    key: '/query',
+    icon: <AimOutlined />,
+    label: '即时查询'
+  },
+  {
+    key: '/alert',
+    icon:  <AlertOutlined />,
+    label: '告警中心',
+    children: [
+      {
+        key: '/alert/active',
+        label: '活跃告警'
+      },
+      {
+        key: '/alert/rule',
+        label: '告警规则'
+      },
+      {
+        key: '/alert/group',
+        label: '通知分组'
+      },
+      {
+        key: '/alert/schedule',
+        label: '人员排班'
+      },
+      {
+        key: '/alert/block',
+        label: '屏蔽规则'
+      },
+      {
+        key: '/alert/history',
+        label: '告警历史'
+      }
+    ]
+  },
+  {
+    key: '/notification',
+    icon: <MailOutlined />,
+    label: '通知中心',
+    children: [
+      {
+        key: '/notification/media',
+        label: '通知媒介'
+      },
+      {
+        key: '/notification/template',
+        label: '通知模板'
+      },
+      {
+        key: '/notification/history',
+        label: '通知历史'
+      }
+    ]
+  },
+  {
+    key: '/datasource',
+    icon: <DatabaseOutlined />,
+    label: '数据来源'
+  },
+  {
     key: '/system',
     icon: <ClusterOutlined />,
     label: '系统管理',
@@ -60,44 +120,8 @@ const menuItems = [
         label: '权限管理'
       },
       {
-        key: '/system/log',
-        label: '日志管理'
-      },
-      {
         key: '/system/config',
         label: '系统配置'
-      },
-      {
-        key: '/system/monitor',
-        label: '系统监控'
-      },
-      {
-        key: '/system/backup',
-        label: '数据备份'
-      },
-      {
-        key: '/system/restore',
-        label: '数据恢复'
-      },
-      {
-        key: '/system/audit',
-        label: '审计日志'
-      },
-      {
-        key: '/system/notification',
-        label: '通知管理'
-      },
-      {
-        key: '/system/message',
-        label: '消息管理'
-      },
-      {
-        key: '/system/schedule',
-        label: '定时任务'
-      },
-      {
-        key: '/system/job',
-        label: '工作流'
       }
     ]
   },
