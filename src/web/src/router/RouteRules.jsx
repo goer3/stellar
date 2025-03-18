@@ -37,11 +37,11 @@ export const RouteRules = [
   },
   {
     path: '/login/dingtalk-auth',
-    element: RouteLazyLoad(React.lazy(() => import('@/page/login/DingtalkLogin'))),
+    element: RouteLazyLoad(React.lazy(() => import('@/page/login/LoginDingtalk'))),
   },
   {
     path: '/login/feishu-auth',
-    element: RouteLazyLoad(React.lazy(() => import('@/page/login/FeishuLogin'))),
+    element: RouteLazyLoad(React.lazy(() => import('@/page/login/LoginFeishu'))),
   },
   {
     path: '/',
