@@ -36,12 +36,12 @@ export const RouteRules = [
     element: RouteLazyLoad(React.lazy(() => import('@/page/login/Login'))),
   },
   {
-    path: '/login/dingtalk-auth',
-    element: RouteLazyLoad(React.lazy(() => import('@/page/login/LoginDingtalk'))),
+    path: '/login/auth/dingtalk',
+    element: RouteLazyLoad(React.lazy(() => import('@/page/login/auth/DingtalkAuth'))),
   },
   {
-    path: '/login/feishu-auth',
-    element: RouteLazyLoad(React.lazy(() => import('@/page/login/LoginFeishu'))),
+    path: '/login/auth/feishu',
+    element: RouteLazyLoad(React.lazy(() => import('@/page/login/auth/FeishuAuth'))),
   },
   {
     path: '/',
