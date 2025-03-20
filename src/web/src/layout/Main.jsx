@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Layout, Menu, Avatar, Dropdown, Badge } from 'antd';
 import { DesktopOutlined, DatabaseOutlined, AlertOutlined, MailOutlined, AimOutlined, ControlOutlined, ClusterOutlined } from '@ant-design/icons';
@@ -133,6 +133,8 @@ const menuItems = [
 ];
 
 const MainLayout = () => {
+  // 路由跳转
+  const navigate = useNavigate();
   // 侧边菜单是否折叠
   const [collapsed, setCollapsed] = useState(false);
   // 侧边菜单展开宽度
@@ -165,7 +167,18 @@ const MainLayout = () => {
           onCollapse={(value) => setCollapsed(value)} // 折叠回调
           trigger={collapsed ? <RightArrowIcon /> : <LeftArrowIcon />}
         >
-          <Menu className="stellar-menu" mode="inline" defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']} items={menuItems} />
+          <Menu 
+            className="stellar-menu" 
+            mode="inline" 
+            defaultSelectedKeys={['1']} 
+            defaultOpenKeys={['sub1']} 
+            items={menuItems} 
+            onClick={
+              (e) => {
+                navigate(e.key);
+              }
+            }
+          />
         </Sider>
         <Layout>
           <Content>
