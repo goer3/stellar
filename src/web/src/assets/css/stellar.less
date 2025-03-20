@@ -36,10 +36,11 @@ body {
   right: 0;
   bottom: 0;
   background-image: url(../image/background/rbg.png);
+  background-color: #ffffff;
   background-size: cover;
 
   .stellar-login-header {
-    background-color: #ffffff;
+    background-color: transparent;
     height: @LoginHeaderHeight;
     line-height: @LoginHeaderHeight;
     display: flex;
@@ -64,20 +65,23 @@ body {
   }
 
   .stellar-login-content {
-    background-color: #ffffff;
-    height: calc(100vh - @LoginHeaderHeight - @LoginHeaderHeight);
-    line-height: calc(100vh - @LoginHeaderHeight - @LoginHeaderHeight);
+    background-color: transparent;
+    height: calc(100vh - @LoginHeaderHeight);
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url(../image/background/cncf.webp);
+    background-repeat: no-repeat;
+    background-size: auto 500px;
+    background-position: center;
+    background-position-y: calc(100% + 120px);
   }
 
   .stellar-login-footer {
-    background-color: #ffffff;
-    padding: 0;
-    height: @LoginHeaderHeight;
-    line-height: @LoginHeaderHeight;
-    text-align: center;
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    user-select: none;
   } 
 }
 

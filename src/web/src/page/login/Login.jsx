@@ -3,7 +3,7 @@ import { Layout } from 'antd';
 import { GithubOutlined } from '@ant-design/icons';
 import { Logo } from '@/components/Image';
 
-const { Header, Footer, Content } = Layout;
+const { Header, Content } = Layout;
 
 const Login = () => {
   const navigate = useNavigate();
@@ -37,10 +37,11 @@ const Login = () => {
           </a>
         </div>
       </Header>
-      <Content className="stellar-login-content">Content</Content>
-      <Footer className="stellar-login-footer">
-        <b>👻 STELLAR </b>© 2025 EZOPS.CN. <a href="" target='_blank'><GithubOutlined /> 立即查看项目开发进度.</a>
-      </Footer>
+      <Content className="stellar-login-content">
+        <div className="stellar-login-footer">
+          <b>👻 STELLAR </b>© 2025 EZOPS.CN. <a href="" target='_blank'><GithubOutlined /> 立即查看项目开发进度.</a>
+        </div>
+      </Content>
     </Layout>
   );
 };
