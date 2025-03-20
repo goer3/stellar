@@ -45,7 +45,7 @@ createRoot(document.getElementById('root')).render(
           itemSelectedBg: 'rgb(227, 232, 240)', // 菜单项选中背景
           itemHoverBg: 'rgb(227, 232, 240)', // 菜单项 hover 背景
           itemActiveBg: 'rgb(227, 232, 240)', // 菜单项 active 背景
-          dropdownWidth: '100px', // 弹出菜单最小宽度
+          dropdownWidth: 'auto', // 弹出菜单最小宽度
         }
       }
     }}

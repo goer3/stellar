@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
 import { Layout, Menu, Avatar, Dropdown, Badge } from 'antd';
-import { DesktopOutlined, ClusterOutlined, ApiOutlined, DatabaseOutlined, AlertOutlined, MailOutlined, AimOutlined } from '@ant-design/icons';
+import { DesktopOutlined, DatabaseOutlined, AlertOutlined, MailOutlined, AimOutlined, ControlOutlined, ClusterOutlined } from '@ant-design/icons';
 import { Logo } from '@/components/Image';
 import { RightArrowIcon, LeftArrowIcon } from '@/components/Icon';
 import { GenerateGenderBadge } from '@/components/Tag';
@@ -57,16 +57,16 @@ const menuItems = [
         label: '告警规则'
       },
       {
+        key: '/alert/block',
+        label: '屏蔽规则'
+      },
+      {
         key: '/alert/group',
         label: '通知分组'
       },
       {
         key: '/alert/schedule',
         label: '人员排班'
-      },
-      {
-        key: '/alert/block',
-        label: '屏蔽规则'
       },
       {
         key: '/alert/history',
@@ -96,11 +96,11 @@ const menuItems = [
   {
     key: '/datasource',
     icon: <DatabaseOutlined />,
-    label: '数据来源'
+    label: '数据源'
   },
   {
     key: '/system',
-    icon: <ClusterOutlined />,
+    icon: <ControlOutlined />,
     label: '系统管理',
     children: [
       {
@@ -127,7 +127,7 @@ const menuItems = [
   },
   {
     key: '/information',
-    icon: <ApiOutlined />,
+    icon: <ClusterOutlined />,
     label: '节点信息'
   }
 ];
