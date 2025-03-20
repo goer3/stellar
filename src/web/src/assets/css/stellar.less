@@ -27,6 +27,61 @@ body {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+.stellar-login {
+  max-height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../image/background/rbg.png);
+  background-size: cover;
+
+  .stellar-login-header {
+    background-color: #ffffff;
+    height: @LoginHeaderHeight;
+    line-height: @LoginHeaderHeight;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .stellar-login-logo {
+      height: @LoginHeaderHeight;
+      line-height: @LoginHeaderHeight;
+
+      img {
+        height: @LoginHeaderHeight;
+        padding: 20px 0;
+        user-select: none;
+      }
+    }
+
+    .stellar-login-menu {
+      line-height: @LoginHeaderHeight;
+      font-size: 30px;
+    }
+  }
+
+  .stellar-login-content {
+    background-color: #ffffff;
+    height: calc(100vh - @LoginHeaderHeight - @LoginHeaderHeight);
+    line-height: calc(100vh - @LoginHeaderHeight - @LoginHeaderHeight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stellar-login-footer {
+    background-color: #ffffff;
+    padding: 0;
+    height: @LoginHeaderHeight;
+    line-height: @LoginHeaderHeight;
+    text-align: center;
+  } 
+}
+
+
 .stellar-header {
   height: @HeaderHeight;
   line-height: @HeaderHeight;

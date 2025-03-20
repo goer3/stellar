@@ -1,4 +1,9 @@
 import { useNavigate } from 'react-router-dom';
+import { Layout } from 'antd';
+import { GithubOutlined } from '@ant-design/icons';
+import { Logo } from '@/components/Image';
+
+const { Header, Footer, Content } = Layout;
 
 const Login = () => {
   const navigate = useNavigate();
@@ -11,19 +16,32 @@ const Login = () => {
     dingtalk: {
       name: '钉钉登录',
       url: 'https://login.dingtalk.com/login/index.htm',
-      enable: false,
+      enable: false
     },
     feishu: {
       name: '飞书登录',
       url: 'https://login.feishu.cn/login/index.htm',
-      enable: false,
-    },
+      enable: false
+    }
   };
 
   return (
-    <div>
-      <h1>登录</h1>
-    </div>
+    <Layout className="stellar-login">
+      <Header className="stellar-login-header">
+        <div className="stellar-login-logo">
+          <img src={Logo} alt="logo" />
+        </div>
+        <div className='stellar-login-menu'>
+          <a href="" target='_blank'>
+            <GithubOutlined />
+          </a>
+        </div>
+      </Header>
+      <Content className="stellar-login-content">Content</Content>
+      <Footer className="stellar-login-footer">
+        <b>👻 STELLAR </b>© 2025 EZOPS.CN. <a href="" target='_blank'><GithubOutlined /> 立即查看项目开发进度.</a>
+      </Footer>
+    </Layout>
   );
 };
 
