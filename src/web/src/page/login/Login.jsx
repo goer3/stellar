@@ -99,9 +99,9 @@ const Login = () => {
               </Form.Item>
               <Form.Item className='stellar-login-forget'>
                 <Form.Item name="remember" valuePropName="checked" noStyle>
-                  <Checkbox>记住密码 |</Checkbox>
+                  <Checkbox></Checkbox>
                 </Form.Item>
-                <span>忘记密码？<a href="">找回密码</a></span>
+                <span style={{marginLeft: '5px'}}>记住密码 | 忘记密码？<a href="">找回密码</a></span>
               </Form.Item>
               <Form.Item style={{ margin: 0 }}>
                 <Button block type="primary" htmlType="submit">
