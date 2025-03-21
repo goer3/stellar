@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { Layout, Divider, Form, Input, Button, Checkbox } from 'antd';
-import { GithubOutlined, UserOutlined, LockOutlined, InsuranceOutlined, DingtalkOutlined } from '@ant-design/icons';
+import { GithubOutlined, UserOutlined, KeyOutlined, InsuranceOutlined } from '@ant-design/icons';
 import { Logo } from '@/components/Image';
 
 const { Header, Content } = Layout;
@@ -78,7 +78,7 @@ const Login = () => {
                     message: '请输入您的密码'
                   }
                 ]}>
-                <Input.Password autoComplete="off" prefix={<LockOutlined />} type="password" placeholder="密码" />
+                <Input.Password autoComplete="off" prefix={<KeyOutlined />} type="password" placeholder="密码" />
               </Form.Item>
               {/*手机令牌方式*/}
               <Form.Item
@@ -93,14 +93,15 @@ const Login = () => {
                     required: true,
                     message: '请输入您的验证码'
                   }
-                ]}>
+                ]}
+                className='stellar-login-lastitem'>
                 <Input autoComplete="off" prefix={<InsuranceOutlined />} placeholder="手机令牌验证码" />
               </Form.Item>
-              <Form.Item>
+              <Form.Item className='stellar-login-forget'>
                 <Form.Item name="remember" valuePropName="checked" noStyle>
                   <Checkbox>记住密码 |</Checkbox>
                 </Form.Item>
-                <span className="login-form-forgot">忘记密码？<a href="">找回密码</a></span>
+                <span>忘记密码？<a href="">找回密码</a></span>
               </Form.Item>
               <Form.Item style={{ margin: 0 }}>
                 <Button block type="primary" htmlType="submit">
@@ -108,8 +109,8 @@ const Login = () => {
                 </Button>
               </Form.Item>
               <Divider>或者使用其它方式直接登录</Divider>
-              <Button block color="primary" style={{ marginBottom: 15 }}>使用钉钉登录</Button>
-              <Button block color="danger">使用飞书登录</Button>
+              <Button block className='stellar-login-dingtalk'>切换钉钉登录</Button>
+              <Button block className='stellar-login-feishu'>切换飞书登录</Button>
             </Form>
           </div>
         </div>
