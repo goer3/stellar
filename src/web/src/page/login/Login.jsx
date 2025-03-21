@@ -110,7 +110,6 @@ const Login = () => {
               </Form.Item>
               <Divider>或者使用其它方式直接登录</Divider>
               <Button block className='stellar-login-dingtalk'>切换钉钉登录</Button>
-              <Divider></Divider>
               <Button block className='stellar-login-feishu'>切换飞书登录</Button>
             </Form>
           </div>
