@@ -99,7 +99,7 @@ const Login = () => {
               </Form.Item>
               <Form.Item className='stellar-login-forget'>
                 <Form.Item name="remember" valuePropName="checked" noStyle>
-                  <Checkbox></Checkbox>
+                  <Checkbox/>
                 </Form.Item>
                 <span style={{marginLeft: '5px'}}>记住密码 | 忘记密码？<a href="">找回密码</a></span>
               </Form.Item>
