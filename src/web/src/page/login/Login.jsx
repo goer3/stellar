@@ -115,7 +115,7 @@ const Login = () => {
           </div>
         </div>
         <div className="stellar-login-footer">
-          <b>👻 STELLAR </b>© 2025 EZOPS.CN. <a href="" target='_blank'><GithubOutlined /> 立即查看项目开发进度.</a>
+          <b><GithubOutlined /> STELLAR </b>© 2025 EZOPS.CN. <a href="" target='_blank'>立即查看项目开发进度.</a>
         </div>
       </Content>
     </Layout>
