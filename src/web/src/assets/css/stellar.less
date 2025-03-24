@@ -71,17 +71,20 @@ body {
     }
   }
 
+  .stellar-login-content-bg {
+    background-image: url(../image/background/cncf.webp);
+    background-repeat: no-repeat;
+    background-size: auto 500px;
+    background-position: center;
+    background-position-y: calc(100% + 120px);
+  }
+
   .stellar-login-content {
     background-color: transparent;
     height: calc(100vh - @LoginHeaderHeight);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../image/background/cncf.webp);
-    background-repeat: no-repeat;
-    background-size: auto 500px;
-    background-position: center;
-    background-position-y: calc(100% + 120px);
 
     .stellar-login-box {
       width: 360px;
@@ -187,6 +190,43 @@ body {
   }
 }
 
+.stellar-error {
+  .stellar-error-title {
+    font-size: 450px;
+    font-weight: bolder;
+    color: #f5f5f5;
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .stellar-error-img {
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    img {
+      width: 300px;
+    }
+  }
+
+  .stellar-error-back {
+    position: relative;
+    top: 200px;
+
+    button {
+      width: 200px;
+      height: 32px;
+      line-height: 32px;
+      letter-spacing: 5px;
+      font-size: 15px;
+    }
+  }
+}
 
 .stellar-header {
   height: @HeaderHeight;
@@ -272,7 +312,6 @@ body {
 .stellar-down-arrow {
   position: absolute;
   top: 50%;
-
 
   &::before,
   &::after {

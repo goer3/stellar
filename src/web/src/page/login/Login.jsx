@@ -42,7 +42,7 @@ const Login = () => {
           </a>
         </div>
       </Header>
-      <Content className="stellar-login-content">
+      <Content className="stellar-login-content stellar-login-content-bg">
         <div className="stellar-login-box">
           <div className="stellar-login-title">登录 / Sign in</div>
           <Divider className="stellar-login-welcome">欢迎回来</Divider>
