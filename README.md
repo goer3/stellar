@@ -3,7 +3,7 @@
 [your-project-path]: goer3/stellar
 [go-shield]: https://img.shields.io/badge/Go-1.23-c14438?style=social&logo=Go
 [go-url]: https://go.dev/dl/
-[react-shield]: https://img.shields.io/badge/React-19+-blue.svg?style=social&logo=React&logoColor=087ea4
+[react-shield]: https://img.shields.io/badge/React-18+-blue.svg?style=social&logo=React&logoColor=087ea4
 [react-url]: https://react.dev/
 [contributors-shield]: https://img.shields.io/github/contributors/goer3/stellar.svg?style=social&logo=github
 [contributors-url]: https://github.com/goer3/stellar/graphs/contributors
@@ -37,21 +37,23 @@
 
 ## 目录
 
-- [项目介绍](#项目介绍)
-  - [主要特性](#主要特性)
-- [上手指南](#上手指南)
-  - [开发前您需要准备](#开发前您需要准备)
-  - [项目初始化](#项目初始化)
-- [项目目录结构说明](#项目目录结构说明)
-- [系统架构设计](#系统架构设计)
-- [部署](#部署)
-- [使用到的第三方库](#使用到的第三方库)
-  - [前端开发库](#前端开发库)
-  - [后端开发库](#后端开发库)
-- [贡献者](#贡献者)
-  - [如何参与开源项目](#如何参与开源项目)
-- [联系我](#联系我)
-- [鸣谢](#鸣谢)
+- [目录](#目录)
+  - [项目介绍](#项目介绍)
+    - [主要特性](#主要特性)
+  - [上手指南](#上手指南)
+    - [开发前您需要准备](#开发前您需要准备)
+    - [项目初始化](#项目初始化)
+  - [项目目录结构说明](#项目目录结构说明)
+  - [系统架构设计](#系统架构设计)
+  - [部署](#部署)
+  - [使用到的第三方库](#使用到的第三方库)
+    - [前端开发库](#前端开发库)
+    - [后端开发库](#后端开发库)
+  - [贡献者](#贡献者)
+    - [如何参与开源项目](#如何参与开源项目)
+  - [联系我](#联系我)
+  - [版权说明](#版权说明)
+  - [鸣谢](#鸣谢)
 
 ### 项目介绍
 
