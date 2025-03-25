@@ -8,7 +8,7 @@ const Error500 = () => {
 
   return <>
     <div className="stellar-error-500">
-      <div className="stellar-error-title">500</div>
+      <div className="stellar-error-title">50</div>
       <div className="stellar-error-img">
         <img src={Error500Img} alt="500" />
       </div>

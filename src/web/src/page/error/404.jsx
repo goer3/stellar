@@ -8,7 +8,7 @@ const Error404 = () => {
 
   return <>
     <div className="stellar-error-404">
-      <div className="stellar-error-title">404</div>
+      <div className="stellar-error-title">44</div>
       <div className="stellar-error-img">
         <img src={Error404Img} alt="404" />
       </div>
