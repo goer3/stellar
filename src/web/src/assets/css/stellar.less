@@ -371,3 +371,41 @@ body {
     transform: rotate(-45deg) translateX(-3px);
   }
 }
+
+.stellar-content {
+  background-color: #ffffff;
+
+  .stellar-page-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid @BorderColor;
+    background-image: url(../image/background/banner.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    .stellar-page-title {
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent;
+      display: inline;
+      line-height: 1;
+      font-weight: bolder;
+      font-size: clamp(15px, 25vw, 15px);
+      background: linear-gradient(90deg, #00084d, #1d63ed);
+    }
+  
+    .stellar-page-title::before {
+      content: '';
+      background-image: url(../image/icon/tag-left.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: relative;
+      transform: translateY(23%);
+      width: 20px;
+      height: 20px;
+      display: inline-grid;
+      margin-right: 5px;
+    }
+  }
+
+  
+}
+

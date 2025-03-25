@@ -181,7 +181,7 @@ const MainLayout = () => {
           />
         </Sider>
         <Layout>
-          <Content>
+          <Content className="stellar-content">
             <Outlet />
           </Content>
         </Layout>

@@ -105,6 +105,9 @@ npm install misans --save
 
 # React-router
 npm i react-router react-router-dom --save
+
+# React-helmet
+npm i react-helmet --save 
 ```
 
 #### 后端开发库
