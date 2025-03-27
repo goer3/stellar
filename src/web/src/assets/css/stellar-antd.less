@@ -3,27 +3,37 @@
 // 复写 Ant Design 样式
 // 菜单 Sider
 .ant-layout-sider .ant-layout-sider-children {
-    padding: 10px 0;
+  padding: 10px 0;
 }
 
 // 折叠菜单时，子菜单选中，父菜单项的背景色
 .ant-layout-sider-collapsed .ant-menu-submenu-selected {
-    background-color: @MenuSelectedBg;
+  background-color: @MenuSelectedBg;
 }
 
-.ant-menu-inline-collapsed>li,
-.ant-menu-inline-collapsed>.ant-menu-item {
-    margin: 5px 0;
+.ant-menu-inline-collapsed > li,
+.ant-menu-inline-collapsed > .ant-menu-item {
+  margin: 5px 0;
 }
 
 // 菜单折叠触发器
 .ant-layout-sider-has-trigger {
-    padding-bottom: @HeaderHeight;
+  padding-bottom: @HeaderHeight;
 }
 
 .ant-layout-sider .ant-layout-sider-trigger {
-    height: @HeaderHeight;
-    line-height: @HeaderHeight;
-    font-weight: bolder;
-    box-shadow: @TopShadow;
+  height: @HeaderHeight;
+  line-height: @HeaderHeight;
+  font-weight: bolder;
+  box-shadow: @TopShadow;
+}
+
+.ant-input-outlined:focus,
+.ant-input-outlined:focus-within,
+.ant-select-selector {
+  box-shadow: none !important;
+}
+
+.ant-input-affix-wrapper {
+  padding: 0 10px;
 }

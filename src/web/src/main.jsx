@@ -33,7 +33,7 @@ createRoot(document.getElementById('root')).render(
         },
         Menu: {
           horizontalLineHeight: 50, // 水平菜单行高
-          collapsedIconSize: 17, // 折叠菜单图标大小
+          collapsedIconSize: 16, // 折叠菜单图标大小
           iconSize: 14, // 菜单图标大小
           iconMarginInlineEnd: 10, // 菜单图标内边距
           fontSize: 13, // 菜单字体大小

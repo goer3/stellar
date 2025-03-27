@@ -122,13 +122,6 @@ body {
       }
 
       .stellar-login-form {
-        .ant-input-outlined:focus-within {
-          border-color: #000000e0;
-          box-shadow: none;
-          outline: 0;
-          background-color: #ffffff;
-        }
-
         .ant-form-item-explain {
           margin-top: 5px;
         }
@@ -136,10 +129,6 @@ body {
         .ant-form-item .ant-form-item-control-input {
           height: 32px;
           line-height: 32px;
-
-          .ant-input-affix-wrapper {
-            padding: 0 10px;
-          }
 
           .ant-input {
             height: 32px;
@@ -377,10 +366,10 @@ body {
 
   .stellar-page-header {
     padding: 15px 20px;
-    border-bottom: 1px solid @BorderColor;
     background-image: url(../image/background/banner.png);
     background-repeat: no-repeat;
     background-size: 100%;
+    border-bottom: 1px solid @BorderColor;
 
     .stellar-page-title {
       background-clip: text !important;
@@ -404,8 +393,47 @@ body {
       display: inline-grid;
       margin-right: 5px;
     }
+
+    .stellar-page-desc {
+      color: #777777;
+      font-size: 12px;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+  
+    * {
+      letter-spacing: 1px;
+      line-height: 22px;
+    }
+  
+    ul {
+      margin-block-start: 0;
+      margin-block-end: 0;
+      padding-inline-start: 30px;
+    }
   }
 
+  .stellar-page-content {
+    .stellar-page-search {
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid @BorderColor;
+
+      .ant-form-item {
+        margin-bottom: 20px;
+      }
+    }
+
+    .ant-input-affix-wrapper {
+      height: 28px;
+      line-height: 28px;
+    }
+
+    .ant-select-selector .ant-select-selection-search-input {
+      height: 25px !important;
+      line-height: 25px !important;
+    }
+  }
   
 }
 
