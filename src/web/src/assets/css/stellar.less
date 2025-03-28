@@ -380,7 +380,7 @@ body {
       font-size: clamp(15px, 25vw, 15px);
       background: linear-gradient(90deg, #00084d, #1d63ed);
     }
-  
+
     .stellar-page-title::before {
       content: '';
       background-image: url(../image/icon/tag-left.png);
@@ -400,12 +400,12 @@ body {
       margin-left: 10px;
       margin-top: 10px;
     }
-  
+
     * {
       letter-spacing: 1px;
       line-height: 22px;
     }
-  
+
     ul {
       margin-block-start: 0;
       margin-block-end: 0;
@@ -424,6 +424,38 @@ body {
       }
     }
 
+    .stellar-page-body {
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid @BorderColor;
+
+      .stellar-page-table-btn-group {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+
+      .stellar-page-table-content {
+        .ant-table-wrapper .ant-table-content {
+          border: 1px solid #f0f0f0;
+        }
+
+        .ant-table-wrapper .ant-table-tbody > tr:last-child > td {
+          border-bottom: none;
+        }
+
+        .ant-table-wrapper .ant-table-tbody > tr > th,
+        .ant-table-wrapper .ant-table-tbody > tr > td {
+          height: 28px;
+          line-height: 28px;
+        }
+
+        .ant-table-wrapper .ant-table.ant-table-small .ant-table-tbody > tr > td {
+          padding: 3px 10px;
+        }
+      }
+    }
+
     .ant-input-affix-wrapper {
       height: 28px;
       line-height: 28px;
@@ -434,6 +466,4 @@ body {
       line-height: 25px !important;
     }
   }
-  
 }
-

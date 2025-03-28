@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { TitleSuffix } from '@/components/Text';
-import { Form, Row, Col, Button, Space } from 'antd';
-import { SearchOutlined, ClearOutlined, DownOutlined } from '@ant-design/icons';
+import { Form, Row, Col, Button, Space, Dropdown, Table } from 'antd';
+import { SearchOutlined, ClearOutlined, DownOutlined, PlusOutlined, DownloadOutlined, ClockCircleOutlined, UploadOutlined, CloudDownloadOutlined } from '@ant-design/icons';
 import { GenerateFormItem } from '@/components/Form';
 
 // 页面基础配置
@@ -55,6 +55,77 @@ const User = () => {
     ));
   };
 
+  // 批量操作下拉菜单
+  const multiOperationDropdownMenuItems = [
+    {
+      label: '禁用选定用户',
+      key: '1',
+      danger: true
+    },
+    {
+      label: '启用选定用户',
+      key: '2'
+    },
+    {
+      label: '更新选定用户',
+      key: '3'
+    }
+  ];
+
+  // 数据列
+  const tableColumns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: 'Age',
+      dataIndex: 'age',
+      key: 'age',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+      key: 'address',
+    },
+    {
+      title: 'Action',
+      dataIndex: '',
+      key: 'x',
+      render: () => <a>Delete</a>,
+    },
+  ];
+
+  // 数据源
+  const tableData = [
+    {
+      key: 1,
+      name: 'John Brown',
+      age: 32,
+      address: 'New York No. 1 Lake Park',
+      description: 'My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park.',
+    },
+    {
+      key: 2,
+      name: 'Jim Green',
+      age: 42,
+      address: 'London No. 1 Lake Park',
+      description: 'My name is Jim Green, I am 42 years old, living in London No. 1 Lake Park.',
+    }
+  ];
+
+  // 多选行配置
+  const rowSelection = {
+    onChange: (selectedRowKeys, selectedRows) => {
+      console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+    },
+    getCheckboxProps: (record) => ({
+      disabled: record.name === 'Disabled User',
+      name: record.name,
+    }),
+  };
+
   return (
     <>
       <Helmet>
@@ -91,6 +162,56 @@ const User = () => {
               </Col>
             </Row>
           </Form>
+        </div>
+
+        {/* 表格 */}
+        <div className="stellar-page-body">
+          {/* 表格按钮组 */}
+          <div className="stellar-page-table-btn-group">
+            <Space>
+              <Button icon={<PlusOutlined />} type="primary" onClick={() => {}}>
+                新增用户
+              </Button>
+              <Dropdown menu={{ items: multiOperationDropdownMenuItems }}>
+                <Button>
+                  <Space>
+                    <DownOutlined />
+                    批量操作
+                  </Space>
+                </Button>
+              </Dropdown>
+            </Space>
+            <Space>
+              <Button icon={<DownloadOutlined />} onClick={() => {}}>
+                模板下载
+              </Button>
+              <Button icon={<UploadOutlined />} onClick={() => {}}>
+                用户导入
+              </Button>
+              <Button icon={<ClockCircleOutlined />} onClick={() => {}}>
+                导入记录
+              </Button>
+              <Button icon={<CloudDownloadOutlined />} onClick={() => {}}>
+                导出用户
+              </Button>
+            </Space>
+          </div>
+          {/* 表格内容 */}
+          <div className="stellar-page-table-content">
+            <Table
+              size="small"
+              rowSelection={{
+                type: 'checkbox',
+                ...rowSelection,
+              }}
+              columns={tableColumns}
+              expandable={{
+                expandedRowRender: (record) => <div>{record?.description}</div>,
+                rowExpandable: (record) => record?.name !== 'Not Expandable'
+              }}
+              dataSource={tableData}
+            />
+          </div>
         </div>
       </div>
     </>
