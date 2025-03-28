@@ -482,6 +482,9 @@ body {
         .ant-table-wrapper .ant-table-expanded-row-fixed {
           padding: 15px !important;
           margin: 0 !important;
+          // 解决命名没有溢出，但是展开溢出 1px 的问题
+          margin-left: -1px !important;
+          left: -1px !important;
         }
       }
     }
