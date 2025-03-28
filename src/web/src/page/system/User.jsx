@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { TitleSuffix } from '@/components/Text';
-import { Form, Row, Col, Button, Space, Dropdown, Table } from 'antd';
-import { SearchOutlined, ClearOutlined, DownOutlined, PlusOutlined, DownloadOutlined, ClockCircleOutlined, UploadOutlined, CloudDownloadOutlined } from '@ant-design/icons';
+import { Form, Row, Col, Button, Space, Dropdown, Table, Avatar } from 'antd';
+import { SearchOutlined, ClearOutlined, DownOutlined, PlusOutlined, DownloadOutlined, ClockCircleOutlined, UploadOutlined, CloudDownloadOutlined, EditOutlined } from '@ant-design/icons';
 import { GenerateFormItem } from '@/components/Form';
 
 // 页面基础配置
@@ -75,25 +75,55 @@ const User = () => {
   // 数据列
   const tableColumns = [
     {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
+      title: '头像',
+      dataIndex: 'avatar',
+      key: 'avatar',
+      width: 60,
+      align: 'center',
+      fixed: 'left',
+      render: (url) => <Avatar src={url} />
     },
     {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
+      title: '中文名',
+      dataIndex: 'cnName',
+      key: 'cnName',
+      width: 80,
+      fixed: 'left',
     },
     {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
+      title: '英文名',
+      dataIndex: 'enName',
+      key: 'enName',
+      width: 120,
+      fixed: 'left',
     },
     {
-      title: 'Action',
+      title: '性别',
+      dataIndex: 'gender',
+      key: 'gender',
+    },
+    {
+      title: '手机号',
+      dataIndex: 'phone',
+      key: 'phone',
+    },
+    {
+      title: '邮箱地址',
+      dataIndex: 'email',
+      key: 'email',
+    },
+    {
+      title: '角色',
+      dataIndex: 'role',
+      key: 'role',
+    },
+    {
+      title: '操作',
       dataIndex: '',
+      width: 100,
+      fixed: 'right',
       key: 'x',
-      render: () => <a>Delete</a>,
+      render: () => <Button type="link" icon={<EditOutlined />}>编辑</Button>,
     },
   ];
 
@@ -101,17 +131,25 @@ const User = () => {
   const tableData = [
     {
       key: 1,
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-      description: 'My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park.',
+      avatar: '/images/avatar/default.png',
+      cnName: '张三',
+      enName: 'John Brown',
+      gender: '男',
+      phone: '13100000001',
+      email: 'zhangsan@gmail.com',
+      role: '管理员',
+      description: 'My name is John Brown',
     },
     {
       key: 2,
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-      description: 'My name is Jim Green, I am 42 years old, living in London No. 1 Lake Park.',
+      avatar: '/images/avatar/default.png',
+      cnName: '李四',
+      enName: 'Jim Green',
+      gender: '女',
+      phone: '13100000002',
+      email: 'lisi@gmail.com',
+      role: '访客',
+      description: 'My name is Jim Green.',
     }
   ];
 
@@ -210,6 +248,9 @@ const User = () => {
                 rowExpandable: (record) => record?.name !== 'Not Expandable'
               }}
               dataSource={tableData}
+              scroll={{
+                x: 'max-content',
+              }}
             />
           </div>
         </div>

@@ -416,7 +416,7 @@ body {
   .stellar-page-content {
     .stellar-page-search {
       margin: 10px;
-      padding: 20px;
+      padding: 20px 15px;
       border: 1px solid @BorderColor;
 
       .ant-form-item {
@@ -426,7 +426,7 @@ body {
 
     .stellar-page-body {
       margin: 10px;
-      padding: 20px;
+      padding: 20px 15px;
       border: 1px solid @BorderColor;
 
       .stellar-page-table-btn-group {
@@ -452,6 +452,36 @@ body {
 
         .ant-table-wrapper .ant-table.ant-table-small .ant-table-tbody > tr > td {
           padding: 3px 10px;
+          border-top: 1px solid #f0f0f0;
+        }
+
+        .ant-table-wrapper tr > th,
+        .ant-table-wrapper tr > td {
+          border-bottom: none;
+        }
+
+        .ant-table-wrapper .ant-table-tbody .ant-table-row.ant-table-row-selected > .ant-table-cell {
+          background: #e3e8f0;
+        }
+
+        .ant-table .ant-avatar img {
+          width: 18px;
+          height: 18px;
+          border-radius: 100%;
+        }
+
+        .ant-table .ant-table-container .ant-table-content {
+          scrollbar-width: thin;
+          scrollbar-color: #eaeaea transparent;
+        }
+
+        .ant-table-expanded-row > td {
+          padding: 0 !important;
+        }
+
+        .ant-table-wrapper .ant-table-expanded-row-fixed {
+          padding: 15px !important;
+          margin: 0 !important;
         }
       }
     }
