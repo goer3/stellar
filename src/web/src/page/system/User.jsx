@@ -1,8 +1,19 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { TitleSuffix } from '@/components/Text';
-import { Form, Row, Col, Button, Space, Dropdown, Table, Avatar } from 'antd';
-import { SearchOutlined, ClearOutlined, DownOutlined, PlusOutlined, DownloadOutlined, ClockCircleOutlined, UploadOutlined, CloudDownloadOutlined, EditOutlined } from '@ant-design/icons';
+import { Form, Row, Col, Button, Space, Dropdown, Table, Avatar, Popconfirm } from 'antd';
+import {
+  SearchOutlined,
+  ClearOutlined,
+  DownOutlined,
+  PlusOutlined,
+  DownloadOutlined,
+  ClockCircleOutlined,
+  UploadOutlined,
+  CloudDownloadOutlined,
+  EditOutlined,
+  DisconnectOutlined
+} from '@ant-design/icons';
 import { GenerateFormItem } from '@/components/Form';
 
 // 页面基础配置
@@ -88,34 +99,34 @@ const User = () => {
       dataIndex: 'cnName',
       key: 'cnName',
       width: 80,
-      fixed: 'left',
+      fixed: 'left'
     },
     {
       title: '英文名',
       dataIndex: 'enName',
       key: 'enName',
       width: 120,
-      fixed: 'left',
+      fixed: 'left'
     },
     {
       title: '性别',
       dataIndex: 'gender',
-      key: 'gender',
+      key: 'gender'
     },
     {
       title: '手机号',
       dataIndex: 'phone',
-      key: 'phone',
+      key: 'phone'
     },
     {
       title: '邮箱地址',
       dataIndex: 'email',
-      key: 'email',
+      key: 'email'
     },
     {
       title: '角色',
       dataIndex: 'role',
-      key: 'role',
+      key: 'role'
     },
     {
       title: '操作',
@@ -123,8 +134,25 @@ const User = () => {
       width: 100,
       fixed: 'right',
       key: 'x',
-      render: () => <Button type="link" icon={<EditOutlined />}>编辑</Button>,
-    },
+      render: () => {
+        return (
+          <Space className="stellar-table-action-btn-group">
+            <Button type="link" icon={<EditOutlined />}>编辑</Button>
+            <Popconfirm
+              placement="topRight"
+              title="确定要禁用该用户吗？"
+              okText="确定"
+              cancelText="取消"
+              className="stellar-table-action-btn-group-popconfirm"
+              okButtonProps={{ style: { backgroundColor: '#ff4d4f', borderColor: '#ff4d4f' } }}
+              onConfirm={() => {}}
+            >
+              <Button type="link" danger icon={<DisconnectOutlined />}>禁用</Button>
+            </Popconfirm>
+          </Space>
+        );
+      }
+    }
   ];
 
   // 数据源
@@ -138,7 +166,7 @@ const User = () => {
       phone: '13100000001',
       email: 'zhangsan@gmail.com',
       role: '管理员',
-      description: 'My name is John Brown',
+      description: 'My name is John Brown'
     },
     {
       key: 2,
@@ -149,7 +177,7 @@ const User = () => {
       phone: '13100000002',
       email: 'lisi@gmail.com',
       role: '访客',
-      description: 'My name is Jim Green.',
+      description: 'My name is Jim Green.'
     }
   ];
 
@@ -160,8 +188,8 @@ const User = () => {
     },
     getCheckboxProps: (record) => ({
       disabled: record.name === 'Disabled User',
-      name: record.name,
-    }),
+      name: record.name
+    })
   };
 
   return (
@@ -240,7 +268,7 @@ const User = () => {
               size="small"
               rowSelection={{
                 type: 'checkbox',
-                ...rowSelection,
+                ...rowSelection
               }}
               columns={tableColumns}
               expandable={{
@@ -249,7 +277,7 @@ const User = () => {
               }}
               dataSource={tableData}
               scroll={{
-                x: 'max-content',
+                x: 'max-content'
               }}
             />
           </div>

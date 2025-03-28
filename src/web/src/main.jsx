@@ -18,7 +18,7 @@ createRoot(document.getElementById('root')).render(
       token: {
         colorPrimary: '#000000E0', // 主色调
         colorPrimaryHover: '#000000E0', // 主色调 hover
-        colorLink: '#000000E0',
+        colorLink: '#0b57d0',
         fontFamily: 'MiSans, serif', // 文字字体
         fontSize: 13, // 默认字号
         borderRadius: 0, // 圆角
