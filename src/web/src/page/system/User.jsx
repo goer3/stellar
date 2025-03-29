@@ -131,9 +131,10 @@ const User = () => {
     {
       title: '操作',
       dataIndex: '',
-      width: 100,
       fixed: 'right',
       key: 'x',
+      width: 150,
+      align: 'center',
       render: () => {
         return (
           <Space className="stellar-table-action-btn-group">
@@ -271,11 +272,27 @@ const User = () => {
                 ...rowSelection
               }}
               columns={tableColumns}
+              dataSource={tableData}
               expandable={{
                 expandedRowRender: (record) => <div>{record?.description}</div>,
                 rowExpandable: (record) => record?.name !== 'Not Expandable'
               }}
-              dataSource={tableData}
+              pagination={{
+                pageSize: 1,
+                current: 1,
+                total: 2,
+                showTotal: (total) => `总共 ${total} 条记录`,
+                // 是否隐藏分页器，当只有一页时隐藏
+                // hideOnSinglePage: true,
+                // 是否允许修改显示数量
+                showSizeChanger: true,
+                // 是否显示快速跳转
+                showQuickJumper: true,
+                // 页码变化时触发
+                onChange: (page, pageSize) => {
+                  console.log(page, pageSize);
+                }
+              }}
               scroll={{
                 x: 'max-content'
               }}

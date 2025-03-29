@@ -440,27 +440,31 @@ body {
           border: 1px solid #f0f0f0;
         }
 
-        .ant-table-wrapper .ant-table-tbody > tr:last-child > td {
+        .ant-table-wrapper .ant-table-tbody>tr:last-child>td {
           border-bottom: none;
         }
 
-        .ant-table-wrapper .ant-table-tbody > tr > th,
-        .ant-table-wrapper .ant-table-tbody > tr > td {
+        .ant-table-wrapper .ant-table-tbody>tr>th,
+        .ant-table-wrapper .ant-table-tbody>tr>td {
           height: 28px;
           line-height: 28px;
         }
 
-        .ant-table-wrapper .ant-table.ant-table-small .ant-table-tbody > tr > td {
+        .ant-table-wrapper .ant-table.ant-table-small .ant-table-tbody>tr>td {
           padding: 3px 10px;
           border-top: 1px solid #f0f0f0;
         }
 
-        .ant-table-wrapper tr > th,
-        .ant-table-wrapper tr > td {
+        .ant-table-wrapper .ant-table-expanded-row td {
+          border-top: none !important;
+        }
+
+        .ant-table-wrapper tr>th,
+        .ant-table-wrapper tr>td {
           border-bottom: none;
         }
 
-        .ant-table-wrapper .ant-table-tbody .ant-table-row.ant-table-row-selected > .ant-table-cell {
+        .ant-table-wrapper .ant-table-tbody .ant-table-row.ant-table-row-selected>.ant-table-cell {
           background: #e3e8f0;
         }
 
@@ -475,7 +479,7 @@ body {
           scrollbar-color: #eaeaea transparent;
         }
 
-        .ant-table-expanded-row > td {
+        .ant-table-expanded-row>td {
           padding: 0 !important;
         }
 
@@ -483,14 +487,39 @@ body {
           padding: 15px !important;
           margin: 0 !important;
           // 解决命名没有溢出，但是展开溢出 1px 的问题
-          margin-left: -1px !important;
-          left: -1px !important;
+          margin-left: -2px !important;
         }
 
         .stellar-table-action-btn-group {
           .ant-btn {
             padding: 0;
           }
+        }
+
+        .ant-pagination,
+        .ant-select-single.ant-select-sm,
+        .ant-select-single.ant-select-sm .ant-select-selector,
+        .ant-select-single.ant-select-sm .ant-select-selector .ant-select-selection-item,
+        .ant-select-single.ant-select-sm .ant-select-selector .ant-select-selection-placeholder,
+        .ant-pagination.ant-pagination-mini .ant-pagination-options-quick-jumper input,
+        .ant-pagination.ant-pagination-mini .ant-pagination-options-quick-jumper,
+        .ant-pagination.ant-pagination-mini .ant-pagination-total-text,
+        .ant-pagination.ant-pagination-mini .ant-pagination-simple-pager,
+        .ant-pagination.ant-pagination-mini .ant-pagination-prev,
+        .ant-pagination.ant-pagination-mini .ant-pagination-next,
+        .ant-pagination.ant-pagination-mini .ant-pagination-item {
+          min-width: 20px;
+          height: 20px;
+          line-height: 20px;
+        }
+
+        .ant-pagination .ant-pagination-options-quick-jumper input:focus,
+        .ant-pagination .ant-pagination-options-quick-jumper input:focus-within {
+          box-shadow: none;
+        }
+
+        .ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+          background-color: #f0f0f0;
         }
       }
     }
@@ -506,4 +535,3 @@ body {
     }
   }
 }
-
