@@ -483,11 +483,9 @@ body {
           padding: 0 !important;
         }
 
-        .ant-table-wrapper .ant-table-expanded-row-fixed {
-          padding: 15px !important;
-          margin: 0 !important;
-          // 解决命名没有溢出，但是展开溢出 1px 的问题
-          margin-left: -2px !important;
+        .ant-table-cell-fix-right {
+          // 解决展开和固定列的同时使用时候右侧 fixed 列溢出问题
+          right: 0.5px !important;
         }
 
         .stellar-table-action-btn-group {
@@ -496,6 +494,7 @@ body {
           }
         }
 
+        // table 分页
         .ant-pagination,
         .ant-select-single.ant-select-sm,
         .ant-select-single.ant-select-sm .ant-select-selector,

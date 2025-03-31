@@ -124,6 +124,26 @@ const User = () => {
       key: 'email'
     },
     {
+      title: '邮箱地址1',
+      dataIndex: 'email',
+      key: 'email1'
+    },
+    {
+      title: '邮箱地址2',
+      dataIndex: 'email',
+      key: 'email2'
+    },
+    {
+      title: '邮箱地址3',
+      dataIndex: 'email',
+      key: 'email3'
+    },
+    {
+      title: '邮箱地址4',
+      dataIndex: 'email',
+      key: 'email4'
+    },
+    {
       title: '角色',
       dataIndex: 'role',
       key: 'role'
@@ -133,7 +153,6 @@ const User = () => {
       dataIndex: '',
       fixed: 'right',
       key: 'x',
-      width: 150,
       align: 'center',
       render: () => {
         return (
@@ -269,7 +288,7 @@ const User = () => {
               size="small"
               rowSelection={{
                 type: 'checkbox',
-                ...rowSelection
+                ...rowSelection,
               }}
               columns={tableColumns}
               dataSource={tableData}
@@ -277,24 +296,19 @@ const User = () => {
                 expandedRowRender: (record) => <div>{record?.description}</div>,
                 rowExpandable: (record) => record?.name !== 'Not Expandable'
               }}
+              scroll={{
+                x: 'max-content',
+              }}
               pagination={{
-                pageSize: 1,
+                pageSize: 2,
                 current: 1,
                 total: 2,
                 showTotal: (total) => `总共 ${total} 条记录`,
-                // 是否隐藏分页器，当只有一页时隐藏
-                // hideOnSinglePage: true,
-                // 是否允许修改显示数量
                 showSizeChanger: true,
-                // 是否显示快速跳转
                 showQuickJumper: true,
-                // 页码变化时触发
                 onChange: (page, pageSize) => {
                   console.log(page, pageSize);
                 }
-              }}
-              scroll={{
-                x: 'max-content'
               }}
             />
           </div>
