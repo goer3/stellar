@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { TitleSuffix } from '@/components/Text';
-import { Form, Row, Col, Button, Space, Dropdown, Table, Avatar, Popconfirm } from 'antd';
+import { Form, Row, Col, Button, Space, Dropdown, Table, Avatar, Popconfirm, Descriptions } from 'antd';
 import {
   SearchOutlined,
   ClearOutlined,
@@ -293,7 +293,16 @@ const User = () => {
               columns={tableColumns}
               dataSource={tableData}
               expandable={{
-                expandedRowRender: (record) => <div>{record?.description}</div>,
+                expandedRowRender: (record) => {
+                  const items = [
+                    { key: 'email1', label: '邮箱地址1', children: record?.email },
+                    { key: 'email2', label: '邮箱地址2', children: record?.email },
+                    { key: 'email3', label: '邮箱地址3', children: record?.email }
+                  ];
+                  return (
+                    <Descriptions column={1} items={items} />
+                  );
+                },
                 rowExpandable: (record) => record?.name !== 'Not Expandable'
               }}
               scroll={{
