@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 import { TitleSuffix } from '@/components/Text';
-import { Tree, Row, Col, Button } from 'antd';
+import { Tree, Button, Flex } from 'antd';
 import { FileProtectOutlined, PlusOutlined } from '@ant-design/icons';
 
 // 页面基础配置
@@ -127,15 +127,15 @@ const Role = () => {
 
       <div className="stellar-page-content">
         <div className="stellar-page-row">
-          <Row>
-            <Col className="stellar-page-row-tree" flex="250px">
+          <Flex align="flex-start">
+            <div className="stellar-page-row-tree">
               <Button type="primary" block icon={<PlusOutlined />} style={{ marginBottom: 10 }}>新增角色</Button>
               <Tree showLine showIcon defaultExpandedKeys={['0-0-0']} onSelect={() => {}} treeData={treeData} />
-            </Col>
-            <Col className="stellar-page-row-content" flex="auto">
+            </div>
+            <div className="stellar-page-row-content">
               Fill Rest
-            </Col>
-          </Row>
+            </div>
+          </Flex>
         </div>
       </div>
     </>
