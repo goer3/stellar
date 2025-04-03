@@ -133,7 +133,12 @@ const Role = () => {
               <Tree showLine showIcon defaultExpandedKeys={['0-0-0']} onSelect={() => {}} treeData={treeData} />
             </div>
             <div className="stellar-page-row-content">
-              Fill Rest
+              <div className="stellar-page-row-content-title">
+                <span>编辑角色（超级管理员）</span>
+              </div>
+              <div className="stellar-page-row-content-body">
+                
+              </div>
             </div>
           </Flex>
         </div>
