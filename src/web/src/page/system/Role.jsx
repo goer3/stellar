@@ -294,7 +294,7 @@ const Role = () => {
             placeholder="Search"
             onChange={() => { }}
           />
-          <Button type="primary" icon={<SaveOutlined />}>保存</Button>
+          <Button type="primary" icon={<SaveOutlined />}>保存授权</Button>
         </Space>
         <Tree
           checkable
