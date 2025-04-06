@@ -1,8 +1,10 @@
 import { Helmet } from 'react-helmet';
 import { TitleSuffix } from '@/components/Text';
-import { Tree, Button, Flex, Form, Input } from 'antd';
-import { FileProtectOutlined, PlusOutlined } from '@ant-design/icons';
+import { Tree, Button, Flex, Form, Input, Drawer, Space } from 'antd';
+import { FileProtectOutlined, PlusOutlined, SaveOutlined } from '@ant-design/icons';
 import { useState } from 'react';
+
+const { Search } = Input;
 
 // 页面基础配置
 const config = {
@@ -32,11 +34,6 @@ const Role = () => {
       key: '1',
       children: [
         {
-          title: '用户授权',
-          key: 'user-1',
-          icon: <FileProtectOutlined />
-        },
-        {
           title: '菜单授权',
           key: 'menu-1',
           icon: <FileProtectOutlined />
@@ -52,11 +49,6 @@ const Role = () => {
       title: '管理员',
       key: '2',
       children: [
-        {
-          title: '用户授权',
-          key: 'user-2',
-          icon: <FileProtectOutlined />
-        },
         {
           title: '菜单授权',
           key: 'menu-2',
@@ -74,11 +66,6 @@ const Role = () => {
       key: '3',
       children: [
         {
-          title: '用户授权',
-          key: 'user-3',
-          icon: <FileProtectOutlined />
-        },
-        {
           title: '菜单授权',
           key: 'menu-3',
           icon: <FileProtectOutlined />
@@ -94,11 +81,6 @@ const Role = () => {
       title: '访客',
       key: '4',
       children: [
-        {
-          title: '用户授权',
-          key: 'user-4',
-          icon: <FileProtectOutlined />
-        },
         {
           title: '菜单授权',
           key: 'menu-4',
@@ -119,6 +101,10 @@ const Role = () => {
   // 选中的角色
   const [selectedRoleKey, setSelectedRoleKey] = useState('1');
 
+  // 抽屉开关
+  const [openMenuDrawer, setOpenMenuDrawer] = useState(false);
+  const [openApiDrawer, setOpenApiDrawer] = useState(false);
+
   // 点击角色
   const onRoleMenuSelect = (selectedKeys, info) => {
     // 获取选中的节点
@@ -134,15 +120,106 @@ const Role = () => {
       setSelectedRoleKey(roleKey);
 
       // 判断选中的节点是否是菜单
-      if (roleMenuName === 'user') {
-        console.log('用户授权');
-      } else if (roleMenuName === 'menu') {
-        console.log('菜单授权');
+      if (roleMenuName === 'menu') {
+        setOpenMenuDrawer(true);
       } else if (roleMenuName === 'api') {
-        console.log('接口授权');
+        setOpenApiDrawer(true);
       }
     }
   };
+
+  const grantMenuItems = [
+    {
+      key: '/dashboard',
+      title: '工作空间'
+    },
+    {
+      key: '/query',
+      title: '即时查询'
+    },
+    {
+      key: '/alert',
+      title: '告警中心',
+      children: [
+        {
+          key: '/alert/active',
+          title: '活跃告警'
+        },
+        {
+          key: '/alert/rule',
+          title: '告警规则'
+        },
+        {
+          key: '/alert/block',
+          title: '屏蔽规则'
+        },
+        {
+          key: '/alert/group',
+          title: '通知分组'
+        },
+        {
+          key: '/alert/schedule',
+          title: '人员排班'
+        },
+        {
+          key: '/alert/history',
+          title: '告警历史'
+        }
+      ]
+    },
+    {
+      key: '/notification',
+      title: '通知中心',
+      children: [
+        {
+          key: '/notification/media',
+          title: '通知媒介'
+        },
+        {
+          key: '/notification/template',
+          title: '通知模板'
+        },
+        {
+          key: '/notification/history',
+          title: '通知历史'
+        }
+      ]
+    },
+    {
+      key: '/datasource',
+      title: '数据源'
+    },
+    {
+      key: '/system',
+      title: '系统管理',
+      children: [
+        {
+          key: '/system/user',
+          title: '用户管理'
+        },
+        {
+          key: '/system/role',
+          title: '角色管理'
+        },
+        {
+          key: '/system/menu',
+          title: '菜单管理'
+        },
+        {
+          key: '/system/permission',
+          title: '权限管理'
+        },
+        {
+          key: '/system/config',
+          title: '系统配置'
+        }
+      ]
+    },
+    {
+      key: '/information',
+      title: '节点信息'
+    }
+  ];
 
   return (
     <>
@@ -210,6 +287,27 @@ const Role = () => {
           </Flex>
         </div>
       </div>
+      {/* 菜单授权抽屉 */}
+      <Drawer className="stellar-page-drawer" title="菜单授权" width={500} maskClosable={false} onClose={() => setOpenMenuDrawer(false)} open={openMenuDrawer}>
+        <Space style={{ marginBottom: 10 }}>
+          <Search
+            placeholder="Search"
+            onChange={() => { }}
+          />
+          <Button type="primary" icon={<SaveOutlined />}>保存</Button>
+        </Space>
+        <Tree
+          checkable
+          defaultExpandAll={true}
+          treeData={grantMenuItems}
+        />
+      </Drawer>
+      {/* 接口授权抽屉 */}
+      <Drawer title="接口授权" width={800} maskClosable={false} onClose={() => setOpenApiDrawer(false)} open={openApiDrawer}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Drawer>
     </>
   );
 };
