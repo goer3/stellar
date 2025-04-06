@@ -1,7 +1,8 @@
 import { Helmet } from 'react-helmet';
 import { TitleSuffix } from '@/components/Text';
-import { Tree, Button, Flex } from 'antd';
+import { Tree, Button, Flex, Form, Input } from 'antd';
 import { FileProtectOutlined, PlusOutlined } from '@ant-design/icons';
+import { useState } from 'react';
 
 // 页面基础配置
 const config = {
@@ -28,89 +29,120 @@ const Role = () => {
   const treeData = [
     {
       title: '超级管理员',
-      key: '0-0-0',
+      key: '1',
       children: [
         {
           title: '用户授权',
-          key: '0-0-0-0',
+          key: 'user-1',
           icon: <FileProtectOutlined />
         },
         {
           title: '菜单授权',
-          key: '0-0-0-1',
+          key: 'menu-1',
           icon: <FileProtectOutlined />
         },
         {
           title: '接口授权',
-          key: '0-0-0-2',
+          key: 'api-1',
           icon: <FileProtectOutlined />
         }
       ]
     },
     {
       title: '管理员',
-      key: '0-0-1',
+      key: '2',
       children: [
         {
           title: '用户授权',
-          key: '0-0-1-0',
+          key: 'user-2',
           icon: <FileProtectOutlined />
         },
         {
           title: '菜单授权',
-          key: '0-0-1-1',
+          key: 'menu-2',
           icon: <FileProtectOutlined />
         },
         {
           title: '接口授权',
-          key: '0-0-1-2',
+          key: 'api-2',
           icon: <FileProtectOutlined />
         }
       ]
     },
     {
       title: '运维',
-      key: '0-0-2',
+      key: '3',
       children: [
         {
           title: '用户授权',
-          key: '0-0-2-0',
+          key: 'user-3',
           icon: <FileProtectOutlined />
         },
         {
           title: '菜单授权',
-          key: '0-0-2-1',
+          key: 'menu-3',
           icon: <FileProtectOutlined />
         },
         {
           title: '接口授权',
-          key: '0-0-2-2',
+          key: 'api-3',
           icon: <FileProtectOutlined />
         }
       ]
     },
     {
       title: '访客',
-      key: '0-0-3',
+      key: '4',
       children: [
         {
           title: '用户授权',
-          key: '0-0-3-0',
+          key: 'user-4',
           icon: <FileProtectOutlined />
         },
         {
           title: '菜单授权',
-          key: '0-0-3-1',
+          key: 'menu-4',
           icon: <FileProtectOutlined />
         },
         {
           title: '接口授权',
-          key: '0-0-3-2',
+          key: 'api-4',
           icon: <FileProtectOutlined />
         }
       ]
     }
   ];
+
+  // 编辑角色表单
+  const [editRoleForm] = Form.useForm();
+
+  // 选中的角色
+  const [selectedRoleKey, setSelectedRoleKey] = useState('1');
+
+  // 点击角色
+  const onRoleMenuSelect = (selectedKeys, info) => {
+    // 获取选中的节点
+    const keyStr = selectedKeys[0];
+    // 如果不包含 -，则表示访问的是角色本身，否则表示访问的是角色菜单，需要进行切割
+    if (!keyStr.includes('-')) {
+      setSelectedRoleKey(keyStr);
+      console.log('角色ID:', keyStr);
+    } else {
+      const keyArr = keyStr.split('-');
+      const roleMenuName = keyArr[0];
+      const roleKey = keyArr[1];
+      setSelectedRoleKey(roleKey);
+
+      // 判断选中的节点是否是菜单
+      if (roleMenuName === 'user') {
+        console.log('用户授权');
+      } else if (roleMenuName === 'menu') {
+        console.log('菜单授权');
+      } else if (roleMenuName === 'api') {
+        console.log('接口授权');
+      }
+    }
+  };
 
   return (
     <>
@@ -130,14 +162,49 @@ const Role = () => {
           <Flex align="flex-start">
             <div className="stellar-page-row-tree">
               <Button type="primary" block icon={<PlusOutlined />} style={{ marginBottom: 10 }}>新增角色</Button>
-              <Tree showLine showIcon defaultExpandedKeys={['0-0-0']} onSelect={() => {}} treeData={treeData} />
+              <Tree 
+                showLine 
+                showIcon 
+                multiple={false}
+                defaultExpandedKeys={[selectedRoleKey]} 
+                onSelect={onRoleMenuSelect} 
+                treeData={treeData} 
+              />
             </div>
             <div className="stellar-page-row-content">
               <div className="stellar-page-row-content-title">
-                <span>编辑角色（超级管理员）</span>
+                <span>超级管理员</span>
               </div>
               <div className="stellar-page-row-content-body">
-                
+                <div className="stellar-page-row-content-body-form">
+                  <Form form={editRoleForm}
+                    labelCol={{ span: 8 }}
+                    wrapperCol={{ span: 16 }}
+                    style={{ width: 400 }}
+                    onFinish={() => { }}>
+                    <Form.Item label="角色ID" name="id" hidden>
+                      <Input />
+                    </Form.Item>
+                    <Form.Item label="角色名称" name="name" rules={[{ required: true, message: '请输入角色名称' }]}>
+                      <Input placeholder="请输入角色名称" />
+                    </Form.Item>
+                    <Form.Item label="角色描述" name="description" rules={[{ required: true, message: '请输入角色描述' }]}>
+                      <Input placeholder="请输入角色描述" />
+                    </Form.Item>
+                    <Form.Item label="创建人" name="creator">
+                      <Input disabled />
+                    </Form.Item>
+                    <Form.Item label="创建时间" name="createdAt">
+                      <Input disabled />
+                    </Form.Item>
+                    <Form.Item label="更新时间" name="updatedAt">
+                      <Input disabled />
+                    </Form.Item>
+                    <Form.Item label={null}>
+                      <Button type="primary" block htmlType="submit">保存修改</Button>
+                    </Form.Item>
+                  </Form>
+                </div>
               </div>
             </div>
           </Flex>
