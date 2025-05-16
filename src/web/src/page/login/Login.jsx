@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Layout, Divider, Form, Input, Button, Checkbox } from 'antd';
 import { GithubOutlined, UserOutlined, KeyOutlined, InsuranceOutlined } from '@ant-design/icons';
 import { Logo } from '@/components/Image';
+import { FooterComponent } from '@/components/Component';
 
 const { Header, Content } = Layout;
 
@@ -114,9 +115,7 @@ const Login = () => {
             </Form>
           </div>
         </div>
-        <div className="stellar-login-footer">
-          <b><GithubOutlined /> STELLAR </b>© 2025 EZOPS.CN. <a href="https://github.com/goer3/stellar" target='_blank'>立即查看项目开发进度.</a>
-        </div>
+        <FooterComponent />
       </Content>
     </Layout>
   );
