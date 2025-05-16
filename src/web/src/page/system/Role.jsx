@@ -291,7 +291,7 @@ const Role = () => {
       <Drawer className="stellar-page-drawer" title="菜单授权" width={500} maskClosable={false} onClose={() => setOpenMenuDrawer(false)} open={openMenuDrawer}>
         <Space style={{ marginBottom: 10 }}>
           <Search
-            placeholder="Search"
+            placeholder="输入菜单名称进行搜索"
             onChange={() => { }}
           />
           <Button type="primary" icon={<SaveOutlined />}>保存授权</Button>
